@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Book a car service appointment at Meghna Motor Pal Murti Garage in Suratgarh.">
+    <meta name="keywords" content="book car service suratgarh, car repair appointment, garage booking">
+    <meta name="author" content="Full Meghna Motor Pal Murti Garage">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <title>Book Service | Meghna Motor Pal Murti Garage</title>
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .field-error {
+            border-color: var(--accent) !important;
+            box-shadow: 0 0 0 3px rgba(217, 39, 46, 0.15);
+        }
+        .error-msg {
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-top: 4px;
+            display: none;
+        }
+        .error-msg.show { display: block; }
+        .form-success {
+            background: #f0fff4;
+            border: 1px solid #38a169;
+            border-radius: 8px;
+            color: #276749;
+            display: none;
+            font-weight: 600;
+            padding: 16px 20px;
+            text-align: center;
+        }
+        .form-success.show { display: block; }
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(217, 39, 46, 0.12);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        Call: 9166176865 | 9352691146
+    </div>
+
+    <nav class="navbar solid">
+        <div class="container">
+            <a href="index.html" class="logo">
+                Meghna <span>Motors</span>
+                <small>PAL MURTI GARAGE</small>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="booking.html" class="active">Booking</a>
+                <a href="booking.html" class="btn btn-primary">Book Service</a>
+            </div>
+            <button class="hamburger"><i class="fa-solid fa-bars-staggered"></i></button>
+        </div>
+    </nav>
+
+    <header class="page-header" style="background: linear-gradient(90deg, rgba(16, 19, 23, 0.9), rgba(16, 19, 23, 0.46)), url('./images/hero/2.png') center/cover no-repeat;">
+        <div class="container reveal">
+            <h1>Book <span class="text-accent">Service</span></h1>
+            <p>Share your details and we will open WhatsApp with your booking request.</p>
+        </div>
+    </header>
+
+    <section class="section bg-alt">
+        <div class="container">
+            <div class="booking-grid">
+                <form class="booking-form reveal" id="bookingForm" novalidate>
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle" style="margin-right: 8px;"></i>
+                        Redirecting to WhatsApp with your booking details...
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Full Name <span style="color:var(--accent);">*</span>
+                            <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name">
+                            <span class="error-msg" id="nameError">Please enter your full name.</span>
+                        </label>
+                        <label>
+                            Phone Number <span style="color:var(--accent);">*</span>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 91661 76865" autocomplete="tel">
+                            <span class="error-msg" id="phoneError">Please enter a valid 10-digit phone number.</span>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            Vehicle (Car Model)
+                            <input type="text" id="vehicle" name="vehicle" placeholder="e.g. Maruti Swift, Hyundai i20">
+                        </label>
+                        <label>
+                            Service Type <span style="color:var(--accent);">*</span>
+                            <select id="service" name="service">
+                                <option value="">Select service</option>
+                                <option>Mechanical Repair</option>
+                                <option>Periodic Maintenance</option>
+                                <option>Denting &amp; Painting</option>
+                                <option>AC Service</option>
+                                <option>Electrical Work</option>
+                                <option>Accidental Repair</option>
+                            </select>
+                            <span class="error-msg" id="serviceError">Please select a service type.</span>
+                        </label>
+                    </div>
+                    <label>
+                        Preferred Date
+                        <input type="date" id="date" name="date">
+                    </label>
+                    <label>
+                        Message / Additional Details
+                        <textarea id="message" name="message" placeholder="Tell us what your car needs..."></textarea>
+                    </label>
+                    <button class="btn btn-primary" type="submit" id="submitBtn" style="font-size: 1.05rem;">
+                        <i class="fab fa-whatsapp" style="margin-right: 10px; font-size: 1.2rem;"></i>Send Booking on WhatsApp
+                    </button>
+                </form>
+
+                <aside class="service-card reveal delay-1" style="padding: 30px;">
+                    <div class="feature-icon" style="margin-bottom: 20px;"><i class="fas fa-location-dot"></i></div>
+                    <h3 style="margin-bottom: 16px;">Visit Meghna Motors</h3>
+                    <p><i class="fas fa-map-marker-alt" style="color:var(--accent); margin-right: 8px;"></i>By Pass Road, Near Hotel Ashiyana, Suratgarh</p>
+                    <p style="margin-top: 14px;"><i class="fas fa-phone-alt" style="color:var(--accent); margin-right: 8px;"></i><strong>+91 91661 76865</strong></p>
+                    <p style="margin-top: 8px;"><i class="fab fa-whatsapp" style="color:#25D366; margin-right: 8px;"></i><strong>+91 93526 91146</strong></p>
+
+                    <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line);">
+                        <h4 style="margin-bottom: 14px; color: var(--text);">Working Hours</h4>
+                        <p style="margin-bottom: 6px;"><i class="fas fa-clock" style="color:var(--accent); margin-right: 8px;"></i>Mon – Sat: 8:00 AM – 8:00 PM</p>
+                        <p><i class="fas fa-clock" style="color:var(--text-muted); margin-right: 8px;"></i>Sunday: 9:00 AM – 2:00 PM</p>
+                    </div>
+
+                    <a href="tel:+919166176865" class="btn btn-outline" style="margin-top: 24px; width: 100%; justify-content: center;">
+                        <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Call Now
+                    </a>
+                    <a href="https://wa.me/919352691146" target="_blank" class="btn btn-primary" style="margin-top: 10px; width: 100%; justify-content: center; background: #25D366;">
+                        <i class="fab fa-whatsapp" style="margin-right: 8px;"></i>WhatsApp Us
+                    </a>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="reveal">
+                    <a href="index.html" class="logo">
+                        Meghna <span>Motors</span>
+                        <small>PAL MURTI GARAGE</small>
+                    </a>
+                    <p style="margin-top: 15px;">Delivering 32+ years of automotive excellence, trust, and precision in Suratgarh.</p>
+                </div>
+                <div class="reveal delay-1">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="booking.html">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact reveal delay-2">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> By Pass Road, Near Hotel Ashiyana, Suratgarh</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 91661 76865</p>
+                    <p><i class="fab fa-whatsapp"></i> +91 93526 91146</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Full Meghna Motor Pal Murti Garage. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-actions">
+        <a href="https://wa.me/919352691146" class="float-btn btn-wa"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+919166176865" class="float-btn btn-call"><i class="fas fa-phone-alt"></i></a>
+        <button class="float-btn btn-top"><i class="fas fa-arrow-up"></i></button>
+    </div>
+
+    <script src="./script.js"></script>
+    <script>
+        // Booking form validation + WhatsApp redirect
+        (function () {
+            const form = document.getElementById('bookingForm');
+            if (!form) return;
+
+            function getVal(id) {
+                return document.getElementById(id).value.trim();
+            }
+
+            function showError(fieldId, errorId, show) {
+                const field = document.getElementById(fieldId);
+                const error = document.getElementById(errorId);
+                if (show) {
+                    field.classList.add('field-error');
+                    error.classList.add('show');
+                } else {
+                    field.classList.remove('field-error');
+                    error.classList.remove('show');
+                }
+            }
+
+            function isValidPhone(phone) {
+                // Accept 10-digit numbers, optionally starting with +91 or 0
+                return /^(\+91|91|0)?[6-9]\d{9}$/.test(phone.replace(/\s/g, ''));
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = getVal('name');
+                const phone = getVal('phone');
+                const service = getVal('service');
+                const vehicle = getVal('vehicle');
+                const date = getVal('date');
+                const message = getVal('message');
+
+                let valid = true;
+
+                if (!name) {
+                    showError('name', 'nameError', true);
+                    valid = false;
+                } else {
+                    showError('name', 'nameError', false);
+                }
+
+                if (!phone || !isValidPhone(phone)) {
+                    showError('phone', 'phoneError', true);
+                    valid = false;
+                } else {
+                    showError('phone', 'phoneError', false);
+                }
+
+                if (!service) {
+                    showError('service', 'serviceError', true);
+                    valid = false;
+                } else {
+                    showError('service', 'serviceError', false);
+                }
+
+                if (!valid) return;
+
+                // Build WhatsApp message
+                let waMsg = `Hello Meghna Motors! 🙏\n\nI would like to book a car service.\n\n`;
+                waMsg += `👤 *Name:* ${name}\n`;
+                waMsg += `📞 *Phone:* ${phone}\n`;
+                if (vehicle) waMsg += `🚗 *Vehicle:* ${vehicle}\n`;
+                waMsg += `🔧 *Service:* ${service}\n`;
+                if (date) waMsg += `📅 *Preferred Date:* ${date}\n`;
+                if (message) waMsg += `📝 *Message:* ${message}\n`;
+                waMsg += `\nPlease confirm my appointment. Thank you!`;
+
+                // Show success state
+                document.getElementById('formSuccess').classList.add('show');
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+
+                // Open WhatsApp after brief delay
+                setTimeout(function () {
+                    window.open('https://wa.me/919352691146?text=' + encodeURIComponent(waMsg), '_blank');
+                    // Reset form
+                    setTimeout(function () {
+                        form.reset();
+                        document.getElementById('formSuccess').classList.remove('show');
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                    }, 2000);
+                }, 600);
+            });
+
+            // Live clear errors on input
+            ['name', 'phone', 'service'].forEach(function (id) {
+                const el = document.getElementById(id);
+                el.addEventListener('input', function () {
+                    el.classList.remove('field-error');
+                    const errEl = document.getElementById(id + 'Error');
+                    if (errEl) errEl.classList.remove('show');
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
